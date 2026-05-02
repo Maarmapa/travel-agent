@@ -1,0 +1,25 @@
+{
+  "name": "travel-agent-whatsapp",
+  "version": "1.0.0",
+  "description": "Travel agent for real-time bookings, alerts, and predictive market data",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "nodemon bot.js"
+  },
+  "keywords": ["travel", "whatsapp", "flights", "hotels", "real-time-alerts"],
+  "author": "Map",
+  "license": "MIT",
+  "dependencies": {
+    "whatsapp-web.js": "^1.26.0",
+    "qrcode-terminal": "^0.12.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.7",
+    "twilio": "^3.85.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
