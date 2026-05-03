@@ -1,82 +1,77 @@
-# Travel Agent — Real-time Travel Intelligence
+# Travel Agent 🌍✈️
 
-Advanced travel planning agent with real-time flight tracking, hotel bookings, weather alerts, crowd monitoring, and predictive market analysis.
+WhatsApp-based travel assistant with real-time flight/hotel search, weather alerts, safety monitoring, and market predictions.
 
 ## Features
 
-🛫 **Flight Intelligence**
-- Real-time flight search (Google Flights, Amadeus, Skyscanner)
-- Price predictions & trend analysis
-- Booking recommendations
-
-🏨 **Hotel Bookings**
-- Booking.com integration
-- Price comparison & tracking
-- Best-time-to-book oracle
-
-🌤️ **Real-time Alerts**
-- Weather anomalies
-- Geopolitical risks
-- Natural disasters
-- Crowd density monitoring
-- Price drops
-
-🔮 **Market Oracle**
-- Predictive pricing
-- Trend analysis
-- Optimal booking windows
-
-📱 **WhatsApp Interface**
-- Natural language chat
-- Command-based queries
-- Full itinerary management
-
-📧 **Multi-channel Notifications**
-- Email (Gmail)
-- SMS (Twilio)
-- Push notifications
+- **Flight Search** — Integration with Google Flights, Skyscanner, Kayak, Amadeus
+- **Hotel Search** — Booking.com, Airbnb, Hotels.com integration
+- **Weather Alerts** — Real-time forecasts and severe weather warnings
+- **Safety Monitoring** — Geopolitical alerts, natural disasters, crowd density tracking
+- **Market Oracle** — Price predictions and optimal booking windows
+- **Email/SMS Alerts** — Gmail, Twilio notifications for critical updates
+- **Itinerary Management** — Create and manage full travel plans
 
 ## Setup
 
+1. Install dependencies:
 ```bash
 npm install
-cp .env.example .env
-# Fill in your API keys
+```
+
+2. Create `.env`:
+```
+PORT=3000
+WHATSAPP_API_URL=https://api.whatsapp.com/send
+GOOGLE_FLIGHTS_API_KEY=xxx
+BOOKING_API_KEY=xxx
+AMADEUS_API_KEY=xxx
+OPENWEATHER_API_KEY=xxx
+NEWS_API_KEY=xxx
+GMAIL_USER=xxx
+TWILIO_SID=xxx
+TWILIO_TOKEN=xxx
+```
+
+3. Run:
+```bash
 npm start
 ```
 
-## Commands
+## API Integrations (TODO)
 
-```
-/flight [route] [dates]      Search flights
-/hotel [location] [dates]    Search hotels
-/weather [location]          Weather alerts
-/alerts                       Real-time travel alerts
-/market                       Market oracle & predictions
-/itinerary                    View bookings
-/help                         Commands help
-```
+- [ ] Google Flights API
+- [ ] Booking.com API
+- [ ] Skyscanner API
+- [ ] Kayak API
+- [ ] Amadeus API
+- [ ] OpenWeather API
+- [ ] NewsAPI (geopolitical alerts)
+- [ ] Gmail API (notifications)
+- [ ] Twilio (SMS alerts)
 
-## Architecture
+## WhatsApp Commands
 
-- **WhatsApp client** for user interaction
-- **Express.js** webhooks for external alerts
-- **Axios** for API integrations
-- **Nodemailer** for email notifications
-- **Twilio** for SMS alerts
+- `/flight [from] [to] [date]` — Search flights
+- `/hotel [city] [checkin] [checkout]` — Search hotels
+- `/weather [city]` — Get weather forecast
+- `/alerts` — Get travel alerts
+- `/market [route]` — Get price predictions
+- `/itinerary [add|list|update]` — Manage itinerary
 
 ## Deployment
 
-Deploy on Render.com like maarmapa-agent:
+Deploy to Render:
 ```bash
-git push render main
+git push origin main
+# Auto-deploys via Render webhook
 ```
 
-## Future
+## TODO
 
-- [ ] Instagram/Facebook posting for travel content
-- [ ] Video generation for trip highlights
-- [ ] Multi-language support
-- [ ] Group travel coordination
-- [ ] Travel insurance integration
-- [ ] Visa/documentation assistance
+- [ ] Integrate all APIs
+- [ ] Implement market oracle ML model
+- [ ] Add geopolitical/weather alert aggregation
+- [ ] Full itinerary engine
+- [ ] Email and SMS notifications
+- [ ] Real-time crowd monitoring
